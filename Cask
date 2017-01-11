@@ -1,9 +1,15 @@
 (package "rabbitmacs" "0.0.1" "Rabbit personal emacs config.")
 
-(source melpa-stable)
+(source "gnu" "http://elpa.emacs-china.org/gnu/")
+(source "melpa-stable" "http://elpa.emacs-china.org/melpa-stable/")
 
 (depends-on "dash")
-
+(depends-on "s")
+(depends-on "f")
+(depends-on "expand-region")
+(depends-on "multiple-cursors")
+(depends-on "smartparens")
+(depends-on "yasnippet")
 
 ;; (depends-on "bind-key")
 ;; (depends-on "cask")

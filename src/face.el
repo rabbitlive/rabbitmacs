@@ -1,25 +1,25 @@
+(require 'modeline)
 
-
-(defun set-default-face ()
-  ""
+(defun rabbit/clear-face ()
+  "Clear default emacs face."
   
-  ;; Disable tool bar
+  ;; No tool bar
   (tool-bar-mode 0)
-
-
-  ;; Disable menu bar
+  ;; No menu bar
   (menu-bar-mode 0)
-
-
-  ;; Disable scroll bar
+  ;; No scroll bar
   (scroll-bar-mode 0)
-  
   )
 
-;;; autoload
-(defun init-face ()
-  (interactive)
-  (set-default-face)
+
+
+;;;##autoload
+(defun main ()
+  (rabbit/clear-face)
+  (rabbit/modeline)
   )
+
+
+(main)
 
 (provide 'face)
