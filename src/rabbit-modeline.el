@@ -1,3 +1,5 @@
+
+
 (defun rabbit/modeline-buffer-name ()
   ""
   (propertize " %b " 'face '((:foreground "black") (:background "lightgray")))

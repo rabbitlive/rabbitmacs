@@ -1,15 +1,14 @@
-(require 'rabbit-region)
-(require 'rabbit-parens)
-(require 'rabbit-utf8)
+(provide 'rabbit-edit)
 
 
 (defun rabbit/edit ()
   ""
-  (rabbit/marker)
-  (rabbit/parens))
 
-(rabbit/edit)
+  (import 'rabbit-region)
+  (import 'rabbit-parens)
+  (import 'rabbit-utf8)
+  (import 'rabbit-chinese)
+
+  )
 
 
-
-(provide 'rabbit-edit)

@@ -1,3 +1,5 @@
+;;-*- mode: emacs-lisp -*-
+
 (package "rabbitmacs" "0.0.1" "Rabbit personal emacs config.")
 
 (source "gnu" "http://elpa.emacs-china.org/gnu/")
@@ -13,6 +15,19 @@
 (depends-on "yasnippet")
 (depends-on "nyan-mode")
 (depends-on "ido-vertical-mode")
+
+
+
+;; chinese
+(depends-on "chinese-pyim")
+(depends-on "pangu-spacing")
+
+
+
+;; AutoHotKey script.
+(depends-on "ahk-mode")
+(depends-on "js2-mode")
+
 
 ;; (depends-on "bind-key")
 ;; (depends-on "cask")

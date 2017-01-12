@@ -1,5 +1,7 @@
 (provide 'rabbit-core)
 
-(require 'rabbit-default)
-(require 'rabbit-face)
-(require 'rabbit-edit)
+(require 'rabbit-util)
+
+(import 'rabbit-default)
+(import 'rabbit-face)
+(import 'rabbit-edit)

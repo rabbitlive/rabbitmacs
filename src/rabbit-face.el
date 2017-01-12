@@ -1,10 +1,10 @@
 (provide 'rabbit-face)
 
-(require 'rabbit-modeline)
-(require 'rabbit-ido)
 
 (defun rabbit/clear-face ()
   "Clear default emacs face."
+
+  (require 'rabbit-modeline)
   
   ;; No tool bar
   (tool-bar-mode 0)
@@ -16,11 +16,8 @@
 
 
 
-(defun main ()
+(defun rabbit/face ()
   (rabbit/clear-face)
   ;;(rabbit/modeline)
-  (rabbit/ido)
+  (import 'rabbit-ido)
   )
-
-
-(main)
