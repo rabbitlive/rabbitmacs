@@ -1,4 +1,4 @@
-(provide 'region)
+(provide 'rabbit-region)
 
 (defun rabbit/marker ()
   ""

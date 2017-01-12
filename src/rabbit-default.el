@@ -9,8 +9,4 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; ido-mode
-(ido-mode 1)
-
-
-(provide 'default)
+(provide 'rabbit-default)

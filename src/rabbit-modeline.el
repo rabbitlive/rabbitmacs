@@ -12,9 +12,8 @@
 (defun rabbit/modeline ()
   "Rewrite mode line face."
 
-  (setq mode-line-format
+  (setq-default mode-line-format
 	'("%e" (:eval (rabbit/modeline-render)))))
 
-(rabbit/modeline)
 
-(provide 'modeline)
+(provide 'rabbit-modeline)

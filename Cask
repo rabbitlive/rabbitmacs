@@ -9,7 +9,10 @@
 (depends-on "expand-region")
 (depends-on "multiple-cursors")
 (depends-on "smartparens")
+(depends-on "smex")
 (depends-on "yasnippet")
+(depends-on "nyan-mode")
+(depends-on "ido-vertical-mode")
 
 ;; (depends-on "bind-key")
 ;; (depends-on "cask")

@@ -1,4 +1,4 @@
-(provide 'parens)
+(provide 'rabbit-parens)
 
 (defun rabbit/parens ()
   ""

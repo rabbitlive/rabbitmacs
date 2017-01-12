@@ -8,6 +8,4 @@
   (cask-initialize __dir__)
   (add-to-list 'load-path (concat __dir__ "src")))
 
-(require 'default)
-(require 'face)
-(require 'edit)
+(require 'rabbit-core)

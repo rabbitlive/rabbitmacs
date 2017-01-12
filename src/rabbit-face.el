@@ -1,4 +1,7 @@
-(require 'modeline)
+(provide 'rabbit-face)
+
+(require 'rabbit-modeline)
+(require 'rabbit-ido)
 
 (defun rabbit/clear-face ()
   "Clear default emacs face."
@@ -13,13 +16,11 @@
 
 
 
-;;;##autoload
 (defun main ()
   (rabbit/clear-face)
-  (rabbit/modeline)
+  ;;(rabbit/modeline)
+  (rabbit/ido)
   )
 
 
 (main)
-
-(provide 'face)
