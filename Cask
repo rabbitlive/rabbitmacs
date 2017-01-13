@@ -29,6 +29,14 @@
 (depends-on "js2-mode")
 
 
+;;; Project
+
+(depends-on "editorconfig")
+
+
+
+
+
 ;; (depends-on "bind-key")
 ;; (depends-on "cask")
 ;; (depends-on "dash")

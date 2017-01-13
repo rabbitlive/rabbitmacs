@@ -10,6 +10,12 @@
   ;; Disable auto save
   ;;(setq auto-save-default nil)
 
-  (fset 'yes-or-no-p 'y-or-n-p))
+  (fset 'yes-or-no-p 'y-or-n-p)
+
+
+  ;; editorconfig
+  (require 'editorconfig)
+  (editorconfig-mode 1)
+  )
 
 
