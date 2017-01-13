@@ -1,3 +1,5 @@
+
+
 (provide 'rabbit-face)
 
 
@@ -20,4 +22,5 @@
   (rabbit/clear-face)
   ;;(rabbit/modeline)
   (import 'rabbit-ido)
+  (import 'rabbit-headerline)
   )
