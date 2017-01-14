@@ -13,8 +13,8 @@
 (depends-on "smartparens")
 (depends-on "smex")
 (depends-on "yasnippet")
-(depends-on "nyan-mode")
 (depends-on "ido-vertical-mode")
+(depends-on "mwim")
 
 
 
@@ -26,14 +26,16 @@
 
 ;; AutoHotKey script.
 (depends-on "ahk-mode")
-(depends-on "js2-mode")
+;;(depends-on "js2-mode")
 
 
 ;;; Project
-
 (depends-on "editorconfig")
 
 
+
+;; Git SCM
+(depends-on "magit")
 
 
 

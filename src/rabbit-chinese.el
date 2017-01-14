@@ -2,8 +2,8 @@
   ""
   
   (require 'chinese-pyim)
-  (require 'chinese-pyim-basedict)
-  (chinese-pyim-basedict-enable)
+  ;;(require 'chinese-pyim-basedict)
+  ;;(chinese-pyim-basedict-enable)
   (setq-default default-input-method "chinese-pyim")
 
   ;; chinese space
