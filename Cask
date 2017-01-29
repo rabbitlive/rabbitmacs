@@ -1,9 +1,10 @@
 ;;-*- mode: emacs-lisp -*-
 
-(package "rabbitmacs" "0.0.1" "Rabbit personal emacs config.")
+(package "rabbitmacs" "0.0.2-rc.0" "Rabbit personal emacs config.")
 
 (source "gnu" "http://elpa.emacs-china.org/gnu/")
 (source "melpa-stable" "http://elpa.emacs-china.org/melpa-stable/")
+
 
 (depends-on "dash")
 (depends-on "s")
@@ -21,7 +22,6 @@
 ;; chinese
 (depends-on "chinese-pyim")
 (depends-on "pangu-spacing")
-
 
 
 ;; AutoHotKey script.

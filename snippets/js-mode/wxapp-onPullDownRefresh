@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor: Rabbit <yfhj1990@hotmail.com>
+# name: wxapp-onPullDownRefresh
+# key: onpd
+# --
+onPullDownRefresh() {
+  $1
+}$0

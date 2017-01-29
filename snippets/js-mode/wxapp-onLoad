@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor: Rabbit <yfhj1990@hotmail.com>
+# name: wxapp-onLoad
+# key: onl
+# --
+onLoad() {
+  $1
+}$0

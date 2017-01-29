@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor: Rabbit <yfhj1990@hotmail.com>
+# name: wxapp-data
+# key: pd
+# --
+data: {
+  ${1:foo}: ${2:42}
+}$0

@@ -8,6 +8,9 @@
   (import 'rabbit-parens)
   (import 'rabbit-utf8)
   (import 'rabbit-chinese)
+  (import 'rabbit-snippets)
+
+  (import 'rabbit-wxapp)
 
   (global-set-key (kbd "M-/") 'hippie-expand)
   (global-set-key (kbd "C-x C-b") 'ibuffer)
