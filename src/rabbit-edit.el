@@ -9,6 +9,8 @@
   (import 'rabbit-utf8)
   (import 'rabbit-chinese)
   (import 'rabbit-snippets)
+  (import 'rabbit-shell)
+  (import 'rabbit-yarn)
 
   (import 'rabbit-wxapp)
 

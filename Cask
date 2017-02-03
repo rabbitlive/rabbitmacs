@@ -16,7 +16,7 @@
 (depends-on "yasnippet")
 (depends-on "ido-vertical-mode")
 (depends-on "mwim")
-
+(depends-on "request")
 
 
 ;; chinese
