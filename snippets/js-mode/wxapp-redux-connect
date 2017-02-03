@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor: Rabbit <yfhj1990@hotmail.com>
+# name: wxapp-redux-connect
+# key: conn
+# --
+connect(${1:mapStateToProps}${2:, ${3:mapDispatchToProps}})({
+  $4
+\})$0

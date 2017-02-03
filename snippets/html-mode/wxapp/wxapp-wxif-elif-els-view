@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# contributor: Rabbit <yfhj1990@hotmail.com>
+# name: wxapp-view-wxif-elif-els-view
+# key: vifee
+# --
+<view wx:if="{{${1:cond}}}">
+  ${3:<view></view>}
+</view>
+<view wx:elif="{{${2:cond}}}">
+  ${4:<view></view>}
+</view>
+<view wx:else>
+  ${5:<view></view>}
+</view>$0

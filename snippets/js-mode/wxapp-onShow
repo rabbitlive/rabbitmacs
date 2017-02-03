@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor: Rabbit <yfhj1990@hotmail.com>
+# name: wxapp-onShow
+# key: ons
+# --
+onShow() {
+  $1
+}$0

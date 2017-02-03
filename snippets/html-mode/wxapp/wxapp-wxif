@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Rabbit <yfhj1990@hotmail.com>
+# name: wxapp-view-wxif
+# key: wxif
+# --
+wx:if="{{${1:cond}}}"$0

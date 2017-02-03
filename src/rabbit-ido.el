@@ -1,9 +1,10 @@
-(require 'smex)
 
 (defun rabbit/ido ()
   ""
+  (require 'smex)
   (ido-mode 1)
   (ido-everywhere 1)
+  (setq-default ido-enable-flex-matching t)
   (ido-vertical-mode 1)  
   (smex-initialize)
   (global-set-key (kbd "M-x") 'smex)

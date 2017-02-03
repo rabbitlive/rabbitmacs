@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor: Rabbit <yfhj1990@hotmail.com>
+# name: wxapp-onShareAppMessage
+# key: onsh
+# --
+onShareAppMessage() {
+  $1
+}$0

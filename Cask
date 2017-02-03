@@ -1,9 +1,10 @@
 ;;-*- mode: emacs-lisp -*-
 
-(package "rabbitmacs" "0.0.1" "Rabbit personal emacs config.")
+(package "rabbitmacs" "0.0.2-rc.0" "Rabbit personal emacs config.")
 
 (source "gnu" "http://elpa.emacs-china.org/gnu/")
 (source "melpa-stable" "http://elpa.emacs-china.org/melpa-stable/")
+
 
 (depends-on "dash")
 (depends-on "s")
@@ -13,8 +14,8 @@
 (depends-on "smartparens")
 (depends-on "smex")
 (depends-on "yasnippet")
-(depends-on "nyan-mode")
 (depends-on "ido-vertical-mode")
+(depends-on "mwim")
 
 
 
@@ -23,17 +24,18 @@
 (depends-on "pangu-spacing")
 
 
-
 ;; AutoHotKey script.
 (depends-on "ahk-mode")
-(depends-on "js2-mode")
+;;(depends-on "js2-mode")
 
 
 ;;; Project
-
 (depends-on "editorconfig")
 
 
+
+;; Git SCM
+(depends-on "magit")
 
 
 
