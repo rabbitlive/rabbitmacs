@@ -29,7 +29,7 @@
 
 (require 'rabbit-util)
 
-(import rabbit-default)
+(import 'rabbit-default)
 (import 'rabbit-face)
 (import 'rabbit-edit)
 
@@ -37,98 +37,96 @@
 
 
 (defun rabbit/store-creator (update)
-  ""
-
+  "Create store."
   (let* ((curr-listener '())
 	 (curr-modal '())
 	 (curr-update update)
 	 (next-listener curr-listener)
-	 (is-dispatching nil)
+	 (is-dispatching nil))
 
-	 (make-imuttable-listener (lambda (fn)
-				    (when (eq next-listener curr-listener)
-				      (setq next-listener (-slice curr-listener 0)))
-				    (funcall fn)
-				    ))
-	 (get-modal (lambda () curr-modal))
+    (defun make-imuttable-listener (fn)
+      (when (eq next-listener curr-listener)
+	(setq next-listener (-slice curr-listener 0)))
+      (funcall fn))
 
-	 (subscribe (lambda (listener)
-		      (let ((is-subscribe t))
+    
+    (defun get-modal ()
+      ""
+      curr-modal)
 
-			(make-imuttable-listener
-			 (lambda ()
-			   (push listener curr-listener)))
 
-			(lambda ()
-			  "Unsubscribe."
-			  (when is-subscribe
-			    (setq is-subscribe nil)
-			    (make-imuttable-listener
-			     (lambda ()
-			       (let (idx (-elem-index listener curr-listener))
-				 (-remove-at idx curr-listener)))))))))
+    (defun subscribe (listener)
+      "Subscribe."
+      (let ((is-subscribe t))
 
-	 (dispatch (lambda (msg)
-		     "Dispatch msg"
+	(make-imuttable-listener
+	 (lambda ()
+	   (push listener curr-listener)))
 
-		     (print curr-update)
+	(lambda ()
+	  "Unsubscribe."
+	  (when is-subscribe
+	    (setq is-subscribe nil)
+	    (make-imuttable-listener
+	     (lambda ()
+	       (let (idx (-elem-index listener curr-listener))
+		 (-remove-at idx curr-listener))))))))
+    
 
-		     (unless is-dispatching
-		       (setq is-dispatching (not is-dispatching))
-		       (setq curr-modal (curr-update curr-modal msg))
-		       (setq is-dispatching (not is-dispatching))
+    (defun dispatch (msg)
+      "Dispatch msg."
 
-		       ;; fire listeners
-		       (-each curr-listener
-			 (lambda (listener)
-			   (funcall listener))))))
-	 )
+      (let ((type (plist-get msg :type))
+	    (msg-type (plist-get msg :msg-type)))
+	
+	(unless (eq :msg type)
+	  (error "TypeError: %s not a Msg." msg))
+
+	(unless msg-type
+	  (error "Error: Msg must have an type property." msg-type))
+
+	(unless is-dispatching
+	  (setq is-dispatching (not is-dispatching))
+	  (setq curr-modal (funcall curr-update curr-modal msg))
+	  (setq is-dispatching (not is-dispatching))
+
+	  (-each curr-listener 'funcall)
+	  ;; (lambda (listener)
+	  ;;     "Call listeners."
+	  ;;     (funcall listener))
+
+	  msg)))
 
     
     (setq rabbit/store (list :type :store
-			     :dispatch 'dispatch
+			     :dispatch  'dispatch
 			     :subscribe 'subscribe
-			     :get-modal 'get-modal
-			     ))))
-
-(rabbit/store-creator (lambda (state action)
-			(print action)
-			state))
-
-(funcall (plist-get rabbit/store :dispatch) 123)
-
-(defun rabbit/listener-creator (fn)
-  "Create listener."
-  (list :type :listener
-	:call fn))
-
-
-(defun defmodal (body)
-  ""
-  (let* ((model rabbit/modal)
-	 (key (intern (buffer-name))))
-    (plist-put rabbit/modal key body)))
-
-(defmodal '((a . 1) (b . 2)))
-
-(defun rabbit/dispatch (store)
-  "dispatch a action."
-  (lambda (action)
-    
-    )
-  )
-
-(rabbit/listener-creator
- (lambda (x) (print x) ))
-
-
-(defun rabbit/subscription ()
-  ""
-  
-  )
+			     :get-modal 'get-modal))))
 
 
 
+(defmacro defmsg (msg-type payload)
+  "Define Msg."
+  (list 'list :type :msg
+	:msg-type msg-type
+	:payload payload))
+
+(defmacro defupdate (name &rest body)
+  "Define Update."
+  `(defun ,name (state msg)
+     (let ((msg-type (plist-get msg :msg-type))
+	   (payload (plist-get msg :payload)))
+       (pcase msg-type ,@body
+	      (_ state)))))
+
+;; (defupdate app
+;;   (:print-42 (print payload)))
+
+;; (app 123 (defmsg :print-42 "asd"))
+
+;;(rabbit/store-creator 'app)
+
+;;(funcall (plist-get rabbit/store :dispatch) (defmsg :print-42 "asd"))
 
 
 (provide 'rabbit-core)
