@@ -10,6 +10,7 @@
   (import 'rabbit-chinese)
   (import 'rabbit-snippets)
   (import 'rabbit-shell)
+  (import 'rabbit-doc)
   (import 'rabbit-yarn)
 
   (import 'rabbit-wxapp)

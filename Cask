@@ -33,9 +33,11 @@
 (depends-on "editorconfig")
 
 
-
 ;; Git SCM
 (depends-on "magit")
+
+;; Docs
+(depends-on "markdown-mode")
 
 
 

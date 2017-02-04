@@ -21,6 +21,10 @@
   (require 'uniquify)
   (setq-default uniquify-buffer-name-style 'forward)
 
+
+  ;; Dash
+  (eval-after-load 'dash '(dash-enable-font-lock))
+
   (setq x-select-enable-clipboard t
         x-select-enable-primary t
         save-interprogram-paste-before-kill t

@@ -3,3 +3,9 @@
 
 # Packaging
 .cask
+
+# Docs
+docs
+
+# Cache
+.cache
