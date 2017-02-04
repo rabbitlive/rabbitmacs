@@ -1,9 +1,4 @@
-# -*- mode: snippet -*-
-# contributor: Rabbit <yfhj1990@hotmail.com> 
-# name: rabbitmacs-init-file 
-# key: \ri 
-# --
-;;; `(buffer-name)` --- ${1:description}  -*- lexical-binding:t -*-
+;;; rabbit-welcome.el --- welcome  -*- lexical-binding:t -*-
 
 ;; Copyright (C) 2017 Rabbit
 
@@ -32,15 +27,14 @@
 
 ;;; Code:
 
-(defun ${3:`(rabbit/replace-import-name)`} ()
+(provide 'rabbit-welcome)
+
+(defun rabbit/welcome ()
   "Main call."
-  $0
+  
   )
-
-
-(provide '${2:`(rabbit/buffer-name-base)`})
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; End:
-;;; `(buffer-name)` ends here
+;;; rabbit-welcome.el ends here
